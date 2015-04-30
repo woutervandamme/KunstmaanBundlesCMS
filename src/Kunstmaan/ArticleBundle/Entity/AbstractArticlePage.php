@@ -8,6 +8,7 @@ use Kunstmaan\ArticleBundle\PagePartAdmin\AbstractArticlePagePagePartAdminConfig
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
 use Kunstmaan\PagePartBundle\Helper\HasPagePartsInterface;
 use Symfony\Component\Form\AbstractType;
+use Doctrine\ORM\Mapping\Cache;
 
 abstract class AbstractArticlePage extends AbstractPage implements HasPagePartsInterface
 {
@@ -16,6 +17,7 @@ abstract class AbstractArticlePage extends AbstractPage implements HasPagePartsI
      *
      * @var \DateTime
      *
+     * @Cache
      * @ORM\Column(type="datetime")
      */
     protected $date;

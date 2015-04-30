@@ -4,10 +4,11 @@ namespace Kunstmaan\PagePartBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\EntityManager;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
  * Reference between a page and a pagepart
  *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\PagePartBundle\Repository\PagePartRefRepository")
  * @ORM\Table(name="kuma_page_part_refs", indexes={@ORM\Index(name="idx_page_part_search", columns={"pageId", "pageEntityname", "context"})})
  * @ORM\HasLifecycleCallbacks()

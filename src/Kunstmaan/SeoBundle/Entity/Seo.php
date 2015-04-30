@@ -8,10 +8,11 @@ use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Kunstmaan\MediaBundle\Entity\Media;
 use Kunstmaan\SeoBundle\Form\SeoType;
 use Kunstmaan\UtilitiesBundle\Helper\ClassLookup;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
  * Seo metadata for entities
  *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\SeoBundle\Repository\SeoRepository")
  * @ORM\Table(name="kuma_seo", indexes={@ORM\Index(name="idx_seo_lookup", columns={"ref_id", "ref_entity_name"})})
  * @ORM\ChangeTrackingPolicy("DEFERRED_EXPLICIT")

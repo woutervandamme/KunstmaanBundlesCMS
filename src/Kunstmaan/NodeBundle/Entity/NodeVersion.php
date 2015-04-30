@@ -7,10 +7,11 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Kunstmaan\UtilitiesBundle\Helper\ClassLookup;
-
+use DOctrine\ORM\Mapping\Cache;
 /**
  * NodeVersion
  *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\NodeBundle\Repository\NodeVersionRepository")
  * @ORM\Table(name="kuma_node_versions", indexes={@ORM\Index(name="idx_node_version_lookup", columns={"ref_id", "ref_entity_name"})})
  * @ORM\HasLifecycleCallbacks()

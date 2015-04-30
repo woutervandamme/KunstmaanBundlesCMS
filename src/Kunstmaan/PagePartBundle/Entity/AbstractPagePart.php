@@ -4,9 +4,11 @@ namespace Kunstmaan\PagePartBundle\Entity;
 use Kunstmaan\PagePartBundle\Helper\PagePartInterface;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Kunstmaan\PagePartBundle\Helper\HasPagePartsInterface;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
  * Abstract ORM Pagepart
+ *
+ * @Cache
  */
 abstract class AbstractPagePart extends AbstractEntity implements PagePartInterface
 {

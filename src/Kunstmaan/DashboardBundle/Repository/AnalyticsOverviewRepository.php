@@ -26,7 +26,8 @@ class AnalyticsOverviewRepository extends EntityRepository
             $dql .= " AND o.config = $config";
         }
 
-        $query = $em->createQuery($dql);
+        $query = $em->createQuery($dql)
+                    ->setCacheable(true);
         return $query->getResult();
     }
 

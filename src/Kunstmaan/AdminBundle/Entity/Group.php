@@ -11,10 +11,12 @@ use FOS\UserBundle\Model\GroupInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * Group
  *
+ * @Cache
  * @ORM\Entity
  * @ORM\Table(name="kuma_groups")
  * @Assert\Callback(methods={"isGroupValid"})
@@ -35,6 +37,8 @@ class Group implements RoleInterface, GroupInterface
     protected $name;
 
     /**
+     *
+     * @Cache
      * @ORM\ManyToMany(targetEntity="Role")
      * @ORM\JoinTable(name="kuma_groups_roles",
      *      joinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")},

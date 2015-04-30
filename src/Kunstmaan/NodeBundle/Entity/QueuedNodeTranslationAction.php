@@ -5,10 +5,11 @@ namespace Kunstmaan\NodeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Kunstmaan\AdminBundle\Entity\BaseUser;
-
+use DOctrine\ORM\Mapping\Cache;
 /**
  * QueuedNodeTranslationAction
  *
+ * @Cache
  * @ORM\Entity
  * @ORM\Table(name="kuma_node_queued_node_translation_actions")
  * @ORM\ChangeTrackingPolicy("DEFERRED_EXPLICIT")

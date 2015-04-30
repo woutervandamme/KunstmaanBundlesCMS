@@ -8,10 +8,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Tree\Node as GedmoNode;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * Class that defines a folder from the MediaBundle in the database
- *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\MediaBundle\Repository\FolderRepository")
  * @ORM\Table(name="kuma_folders", indexes={
  *      @ORM\Index(name="idx_folder_internal_name", columns={"internal_name"}),
@@ -44,6 +45,7 @@ class Folder extends AbstractEntity implements GedmoNode
     /**
      * @var Folder
      *
+     * @Cache("NONSTRICT_READ_WRITE")
      * @ORM\ManyToOne(targetEntity="Folder", inversedBy="children", fetch="LAZY")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", nullable=true)
      * @Gedmo\TreeParent
@@ -53,6 +55,7 @@ class Folder extends AbstractEntity implements GedmoNode
     /**
      * @var ArrayCollection
      *
+     * @Cache
      * @ORM\OneToMany(targetEntity="Folder", mappedBy="parent", fetch="LAZY")
      * @ORM\OrderBy({"lft" = "ASC"})
      */

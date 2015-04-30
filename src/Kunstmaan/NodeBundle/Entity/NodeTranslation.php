@@ -8,10 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Kunstmaan\NodeBundle\Form\NodeTranslationAdminType;
 use Kunstmaan\UtilitiesBundle\Helper\Slugifier;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * NodeTranslation
  *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\NodeBundle\Repository\NodeTranslationRepository")
  * @ORM\Table(
  *     name="kuma_node_translations",
@@ -25,9 +27,9 @@ class NodeTranslation extends AbstractEntity
 
     /**
      * @var Node
-     *
      * @ORM\ManyToOne(targetEntity="Node", inversedBy="nodeTranslations")
      * @ORM\JoinColumn(name="node_id", referencedColumnName="id")
+     * @Cache
      */
     protected $node;
 

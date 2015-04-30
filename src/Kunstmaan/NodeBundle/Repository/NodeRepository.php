@@ -12,9 +12,11 @@ use Kunstmaan\NodeBundle\Entity\Node;
 use Kunstmaan\NodeBundle\Entity\NodeTranslation;
 use Kunstmaan\NodeBundle\Entity\NodeVersion;
 use Kunstmaan\UtilitiesBundle\Helper\ClassLookup;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * NodeRepository
+ * @Cache("NONSTRICT_READ_WRITE")
  */
 class NodeRepository extends NestedTreeRepository
 {
@@ -343,7 +345,6 @@ SQL;
         }
 
         $query = $qb->getQuery();
-
         return $query->getResult();
     }
 }

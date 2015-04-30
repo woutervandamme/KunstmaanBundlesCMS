@@ -4,15 +4,16 @@ namespace Kunstmaan\PagePartBundle\Repository;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Mapping\Cache;
 use Kunstmaan\AdminBundle\Entity\DeepCloneInterface;
 use Kunstmaan\AdminBundle\Entity\EntityInterface;
 use Kunstmaan\UtilitiesBundle\Helper\ClassLookup;
 use Kunstmaan\PagePartBundle\Helper\PagePartInterface;
 use Kunstmaan\PagePartBundle\Entity\PagePartRef;
 use Kunstmaan\PagePartBundle\Helper\HasPagePartsInterface;
-
 /**
  * PagePartRefRepository
+ * @Cache
  */
 class PagePartRefRepository extends EntityRepository
 {
@@ -155,7 +156,8 @@ class PagePartRefRepository extends EntityRepository
                 ->setParameter('pageEntityname', $pageClassname)
                 ->setParameter('pageId', $page->getId())
                 ->setParameter('pagePartEntityname', $pagepartClassname)
-                ->setParameter('context', $context)->getSingleScalarResult();
+                ->setParameter('context', $context)->getSingleScalarResult()
+                ->setCacheable(true);
     }
 
     /**
@@ -179,7 +181,8 @@ class PagePartRefRepository extends EntityRepository
         return $em->createQuery($sql)
                 ->setParameter('pageEntityname', $pageClassname)
                 ->setParameter('pageId', $page->getId())
-                ->setParameter('context', $context)->getSingleScalarResult() != 0;
+                ->setParameter('context', $context)->getSingleScalarResult()
+                ->setCacheable(true)!= 0;
     }
 
     /**

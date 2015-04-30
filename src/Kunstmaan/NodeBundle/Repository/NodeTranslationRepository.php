@@ -11,9 +11,11 @@ use Kunstmaan\NodeBundle\Entity\NodeTranslation;
 use Kunstmaan\NodeBundle\Entity\NodeVersion;
 use Kunstmaan\UtilitiesBundle\Helper\ClassLookup;
 use Kunstmaan\UtilitiesBundle\Helper\Slugifier;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * NodeRepository
+ *
  */
 class NodeTranslationRepository extends EntityRepository
 {
@@ -44,12 +46,14 @@ class NodeTranslationRepository extends EntityRepository
             ->leftJoin('nt.publicNodeVersion', 'v', 'WITH', 'nt.publicNodeVersion = v.id')
             ->where('n.deleted = false')
             ->orderBy('nt.weight')
-            ->addOrderBy('nt.weight');
+            ->addOrderBy('nt.weight')
+            ->setCacheable(true);
 
         if (!empty($lang)) {
             $queryBuilder
                 ->andWhere('nt.lang = :lang')
-                ->setParameter('lang', $lang);
+                ->setParameter('lang', $lang)
+            ;
         }
 
         return $queryBuilder;
@@ -185,6 +189,7 @@ class NodeTranslationRepository extends EntityRepository
             ->setFirstResult(0)
             ->setMaxResults(1);
 
+
         if ($parentNode !== null) {
             $qb->andWhere('t.slug = :slug')
                 ->andWhere('n.parent = :parent')
@@ -267,7 +272,9 @@ class NodeTranslationRepository extends EntityRepository
             ->where('n.parent IS NULL')
             ->andWhere('n.deleted != 1');
 
-        return $qb->getQuery()->getResult();
+        $query = $qb->getQuery();
+        $query->setCacheable(true);
+        return $query->getResult();
     }
 
     /**
@@ -344,6 +351,7 @@ class NodeTranslationRepository extends EntityRepository
             );
         $query->setParameter('lang', $locale);
         $query->setParameter('url', $urlSlug);
+
         $translation = $query->getOneOrNullResult();
 
         return $translation;

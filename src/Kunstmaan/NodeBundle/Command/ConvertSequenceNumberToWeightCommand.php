@@ -37,7 +37,7 @@ class ConvertSequenceNumberToWeightCommand extends ContainerAwareCommand
 
         $batchSize = 20;
         $i =0;
-        $q = $em->createQuery('SELECT t FROM Kunstmaan\NodeBundle\Entity\NodeTranslation t WHERE t.weight IS NULL');
+        $q = $em->createQuery('SELECT t FROM Kunstmaan\NodeBundle\Entity\NodeTranslation t WHERE t.weight IS NULL')->setCacheable(true);
 
         $iterableResult = $q->iterate();
 

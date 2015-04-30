@@ -3,10 +3,12 @@
 namespace Kunstmaan\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * User entity
  *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\AdminBundle\Repository\UserRepository")
  * @ORM\Table(name="kuma_users")
  */

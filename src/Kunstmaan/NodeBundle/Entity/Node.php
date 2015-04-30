@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Tree\Node as GedmoNode;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * Node
@@ -18,6 +19,7 @@ use Gedmo\Tree\Node as GedmoNode;
  * @ORM\HasLifecycleCallbacks()
  * @ORM\ChangeTrackingPolicy("DEFERRED_EXPLICIT")
  * @Gedmo\Tree(type="nested")
+ * @Cache
  */
 class Node extends AbstractEntity implements GedmoNode
 {
@@ -74,7 +76,7 @@ class Node extends AbstractEntity implements GedmoNode
 
     /**
      * @var ArrayCollection
-     *
+     * @Cache
      * @ORM\OneToMany(targetEntity="NodeTranslation", mappedBy="node")
      */
     protected $nodeTranslations;

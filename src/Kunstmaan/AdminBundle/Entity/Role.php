@@ -6,10 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\Role\RoleInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * Role Entity
  *
+ * @Cache
  * @ORM\Entity
  * @ORM\Table( name="kuma_roles" )
  * @UniqueEntity("role")

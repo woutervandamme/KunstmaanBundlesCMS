@@ -5,10 +5,11 @@ namespace Kunstmaan\MediaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
-
+use Doctrine\Orm\Mapping\Cache;
 /**
  * Media
  *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\MediaBundle\Repository\MediaRepository")
  * @ORM\Table(name="kuma_media", indexes={
  *      @ORM\Index(name="idx_media_name", columns={"name"}),
