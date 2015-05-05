@@ -69,7 +69,8 @@ class NodeTranslationRepository extends EntityRepository
     public function getOnlineNodeTranslationsQueryBuilder($lang = null)
     {
         return $this->getNodeTranslationsQueryBuilder($lang)
-            ->andWhere('nt.online = true');
+            ->andWhere('nt.online = true')
+            ->setCacheable(true);
     }
 
     /**
@@ -81,7 +82,8 @@ class NodeTranslationRepository extends EntityRepository
     {
         return $this->getNodeTranslationsQueryBuilder($lang)
             ->andWhere('n.parent = :parent')
-            ->setParameter('parent', $parent);
+            ->setParameter('parent', $parent)
+            ->setCacheable(true);
     }
 
     /**
@@ -93,7 +95,8 @@ class NodeTranslationRepository extends EntityRepository
     public function getOnlineChildrenQueryBuilder(Node $parent, $lang = null)
     {
         return $this->getChildrenQueryBuilder($parent, $lang)
-            ->andWhere('nt.online = true');
+            ->andWhere('nt.online = true')
+            ->setCacheable(true);
     }
 
     /**
@@ -107,6 +110,7 @@ class NodeTranslationRepository extends EntityRepository
     public function getOnlineChildren(Node $parent, $lang = null)
     {
         return $this->getOnlineChildrenQueryBuilder($parent, $lang)
+            ->setCacheable(true)
             ->getQuery()->getResult();
     }
 
@@ -123,7 +127,8 @@ class NodeTranslationRepository extends EntityRepository
             ->select('b', 'v')
             ->innerJoin('b.node', 'n', 'WITH', 'b.node = n.id')
             ->leftJoin('b.publicNodeVersion', 'v', 'WITH', 'b.publicNodeVersion = v.id')
-            ->where('n.deleted != 1 AND b.online = 1');
+            ->where('n.deleted != 1 AND b.online = 1')
+            ->setCacheable(true);
     }
 
     /**
@@ -187,7 +192,8 @@ class NodeTranslationRepository extends EntityRepository
             ->where('n.deleted != 1')
             ->addOrderBy('n.sequenceNumber', 'DESC')
             ->setFirstResult(0)
-            ->setMaxResults(1);
+            ->setMaxResults(1)
+            ->setCacheable(true);
 
 
         if ($parentNode !== null) {
@@ -232,7 +238,8 @@ class NodeTranslationRepository extends EntityRepository
             ->addOrderBy('b.online', 'DESC')
             ->addOrderBy('n.sequenceNumber', 'DESC')
             ->setFirstResult(0)
-            ->setMaxResults(1);
+            ->setMaxResults(1)
+            ->setCacheable(true);
 
         if (!$includeDeleted) {
             $qb->andWhere('n.deleted = 0');
@@ -270,10 +277,10 @@ class NodeTranslationRepository extends EntityRepository
             ->innerJoin('b.node', 'n', 'WITH', 'b.node = n.id')
             ->leftJoin('b.publicNodeVersion', 'v', 'WITH', 'b.publicNodeVersion = v.id')
             ->where('n.parent IS NULL')
-            ->andWhere('n.deleted != 1');
+            ->andWhere('n.deleted != 1')
+            ->setCacheable(true);
 
         $query = $qb->getQuery();
-        $query->setCacheable(true);
         return $query->getResult();
     }
 
@@ -348,7 +355,7 @@ class NodeTranslationRepository extends EntityRepository
                 where n.deleted = 0 and nt.lang = :lang and locate(nt.url, :url) = 1
                 order by length(nt.url) desc limit 1',
                 $rsm
-            );
+            )->setCacheable(true);
         $query->setParameter('lang', $locale);
         $query->setParameter('url', $urlSlug);
 
@@ -400,7 +407,8 @@ class NodeTranslationRepository extends EntityRepository
             ->andWhere('nt.online = 1')
             ->addOrderBy('n.sequenceNumber', 'DESC')
             ->setFirstResult(0)
-            ->setMaxResults(1);
+            ->setMaxResults(1)
+            ->setCacheable(true);
 
         $qb->andWhere('nt.lang = :lang')
             ->setParameter('lang', $language);
@@ -418,7 +426,8 @@ class NodeTranslationRepository extends EntityRepository
             ->innerJoin('nt.publicNodeVersion', 'nv')
             ->innerJoin('nt.node', 'n')
             ->where('nv.refEntityName = :refEntityName')
-            ->setParameter('refEntityName', $refEntityName);
+            ->setParameter('refEntityName', $refEntityName)
+            ->setCacheable(true);
 
         return $qb->getQuery()->getResult();
     }

@@ -33,7 +33,8 @@ class UserRepository extends EntityRepository
             ->andWhere('u.locked=0')
             ->andWhere('u.expired=0')
             ->andWhere('r.role IN (:roles)')
-            ->setParameter('roles', $roles);
+            ->setParameter('roles', $roles)
+            ->setCacheable(true);
 
         return $qb->getQuery()->getResult();
     }

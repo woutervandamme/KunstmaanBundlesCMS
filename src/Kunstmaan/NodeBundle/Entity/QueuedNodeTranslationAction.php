@@ -21,7 +21,7 @@ class QueuedNodeTranslationAction extends AbstractEntity
 
     /**
      * @var NodeTranslation
-     *
+     * @Cache
      * @ORM\ManyToOne(targetEntity="NodeTranslation")
      * @ORM\JoinColumn(name="node_translation_id", referencedColumnName="id")
      */

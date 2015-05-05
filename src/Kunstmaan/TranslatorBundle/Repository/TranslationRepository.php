@@ -73,7 +73,8 @@ EOQ;
         $qb = $em->createQueryBuilder();
         $qb
           ->select('t')
-          ->from('KunstmaanTranslatorBundle:Translation', 't');
+          ->from('KunstmaanTranslatorBundle:Translation', 't')
+          ->setCacheable(true);
 
         if (count($locales) > 0) {
             $qb->andWhere($qb->expr()->in('t.locale', $locales));

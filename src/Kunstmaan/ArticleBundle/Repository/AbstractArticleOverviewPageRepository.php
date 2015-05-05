@@ -20,7 +20,8 @@ abstract class AbstractArticleOverviewPageRepository extends EntityRepository
 	    ->innerJoin('KunstmaanNodeBundle:Node', 'n', 'WITH', 't.node = n.id')
 	    ->where('n.deleted = 0')
 	    ->andWhere('v.refEntityName = :refname')
-	    ->setParameter('refname', $this->getEntityName());
+	    ->setParameter('refname', $this->getEntityName())
+        ->setCacheable(true);
 
 	return $qb->getQuery()->getResult();
     }

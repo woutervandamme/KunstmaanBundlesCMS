@@ -24,7 +24,8 @@ class AclChangesetRepository extends EntityRepository
             ->where('ac.status = :status')
             ->addOrderBy('ac.id', 'ASC')
             ->setMaxResults(1)
-            ->setParameter('status', AclChangeset::STATUS_RUNNING);
+            ->setParameter('status', AclChangeset::STATUS_RUNNING)
+            ->setCacheable(true);
 
         return $qb->getQuery()->getOneOrNullResult();
     }
@@ -41,7 +42,8 @@ class AclChangesetRepository extends EntityRepository
             ->where('ac.status = :status')
             ->addOrderBy('ac.id', 'ASC')
             ->setMaxResults(1)
-            ->setParameter('status', AclChangeset::STATUS_NEW);
+            ->setParameter('status', AclChangeset::STATUS_NEW)
+            ->setCacheable(true);
 
         return $qb->getQuery()->getOneOrNullResult();
     }
@@ -56,7 +58,8 @@ class AclChangesetRepository extends EntityRepository
         $qb = $this->createQueryBuilder('ac')
             ->select('count(ac)')
             ->where('ac.status = :status')
-            ->setParameter('status', AclChangeset::STATUS_NEW);
+            ->setParameter('status', AclChangeset::STATUS_NEW)
+            ->setCacheable(true);
 
         return $qb->getQuery()->getSingleScalarResult() != 0;
     }

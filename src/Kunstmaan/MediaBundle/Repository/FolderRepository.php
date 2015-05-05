@@ -102,7 +102,8 @@ class FolderRepository extends NestedTreeRepository
         $qb = $this->createQueryBuilder('folder')
             ->select('folder')
             ->where('folder.parent is null AND folder.deleted != true')
-            ->orderBy('folder.name');
+            ->orderBy('folder.name')
+            ->setCacheable(true);
 
         if (false === is_null($limit)) {
             $qb->setMaxResults($limit);
@@ -168,7 +169,8 @@ class FolderRepository extends NestedTreeRepository
     {
         /** @var QueryBuilder $qb */
         $qb = parent::getRootNodesQueryBuilder($sortByField, $direction);
-        $qb->andWhere('node.deleted != true');
+        $qb->andWhere('node.deleted != true')
+           ->setCacheable(true);
 
         return $qb;
     }
@@ -313,7 +315,8 @@ class FolderRepository extends NestedTreeRepository
 
             $qb->andWhere($orX)
                 ->setParameter('left', $ignoreSubtree->getLeft())
-                ->setParameter('right', $ignoreSubtree->getRight());
+                ->setParameter('right', $ignoreSubtree->getRight())
+            ->setCacheable(true);
         }
 
         return $qb;

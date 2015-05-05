@@ -53,7 +53,8 @@ class NodeRepository extends NestedTreeRepository
             ->where('b.deleted = 0')
             ->setParameter('lang', $lang)
             ->addOrderBy('t.weight', 'ASC')
-            ->addOrderBy('t.title', 'ASC');
+            ->addOrderBy('t.title', 'ASC')
+            ->setCacheable(true);
 
         if (!$includeHiddenFromNav) {
             $qb->andWhere('b.hiddenFromNav != true');
@@ -329,7 +330,8 @@ SQL;
             ->andWhere('t.lang = :lang')
             ->setParameter('lang', $lang)
             ->addOrderBy('t.weight', 'ASC')
-            ->addOrderBy('t.title', 'ASC');
+            ->addOrderBy('t.title', 'ASC')
+            ->setCacheable(true);
 
         if (!$includeOffline) {
             $qb->andWhere('t.online = true');
