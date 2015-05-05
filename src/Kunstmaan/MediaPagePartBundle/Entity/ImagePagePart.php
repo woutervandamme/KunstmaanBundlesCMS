@@ -6,10 +6,12 @@ use Kunstmaan\PagePartBundle\Entity\AbstractPagePart;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\MediaPagePartBundle\Form\ImagePagePartAdminType;
 use Kunstmaan\MediaBundle\Entity\Media;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * ImagePagePart
  *
+ * @Cache
  * @ORM\Entity
  * @ORM\Table(name="kuma_image_page_parts")
  */

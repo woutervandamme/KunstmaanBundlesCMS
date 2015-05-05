@@ -7,10 +7,12 @@ use Kunstmaan\PagePartBundle\Entity\AbstractPagePart;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\MediaPagePartBundle\Form\DownloadPagePartAdminType;
 use Kunstmaan\MediaBundle\Entity\Media;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * DownloadPagePart
  *
+ * @Cache
  * @ORM\Entity
  * @ORM\Table(name="kuma_download_page_parts")
  */

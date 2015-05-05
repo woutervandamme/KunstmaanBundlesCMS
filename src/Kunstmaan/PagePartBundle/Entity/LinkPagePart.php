@@ -3,10 +3,11 @@
 namespace Kunstmaan\PagePartBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\PagePartBundle\Form\LinkPagePartAdminType;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
  * LinkPagePart
  *
+ * @Cache(region="kunstmaan_slc_pagepart_region")
  * @ORM\Entity
  * @ORM\Table(name="kuma_link_page_parts")
  */

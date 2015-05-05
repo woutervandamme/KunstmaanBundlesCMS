@@ -2,10 +2,12 @@
 namespace Kunstmaan\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * DashboardConfiguration
  *
+ * @Cache
  * @ORM\Entity
  * @ORM\Table(name="kuma_dashboard_configurations")
  */

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping\Cache;
 /**
  * Abstract ORM Pagepart
  *
- * @Cache
+ * @Cache(region="kunstmaan_slc_pagepart_region")
  */
 abstract class AbstractPagePart extends AbstractEntity implements PagePartInterface
 {

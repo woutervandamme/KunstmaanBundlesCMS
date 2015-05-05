@@ -6,10 +6,11 @@ use Kunstmaan\PagePartBundle\Entity\AbstractPagePart;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\MediaPagePartBundle\Form\AudioPagePartAdminType;
 use Kunstmaan\MediaBundle\Entity\Media;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * AudioPagePart
- *
+ * @Cache
  * @ORM\Entity
  * @ORM\Table(name="kuma_audio_page_parts")
  */

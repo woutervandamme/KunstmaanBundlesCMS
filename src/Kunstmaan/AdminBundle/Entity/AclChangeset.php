@@ -5,11 +5,13 @@ namespace Kunstmaan\AdminBundle\Entity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\UtilitiesBundle\Helper\ClassLookup;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * An Acl changeset will be added to the queue whenever a change is made to the permissions. The {@link ApplyAclCommand}
  * will execute these changesets and change their status when finished.
  *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\AdminBundle\Repository\AclChangesetRepository")
  * @ORM\Table(name="kuma_acl_changesets", indexes={@ORM\Index(name="idx_acl_changeset_ref", columns={"ref_id", "ref_entity_name"})})
  * @ORM\HasLifecycleCallbacks()

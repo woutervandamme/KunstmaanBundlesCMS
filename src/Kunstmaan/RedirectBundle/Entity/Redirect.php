@@ -5,10 +5,11 @@ namespace Kunstmaan\RedirectBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
  * Redirect
  *
+ * @Cache
  * @ORM\Table(name="kuma_redirects")
  * @ORM\Entity(repositoryClass="Kunstmaan\RedirectBundle\Repository\RedirectRepository")
  */

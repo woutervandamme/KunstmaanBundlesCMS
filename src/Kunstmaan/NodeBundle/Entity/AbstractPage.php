@@ -11,9 +11,11 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\AbstractType;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * The Abstract ORM Page
+ * @Cache
  */
 abstract class AbstractPage extends AbstractEntity implements PageInterface
 {

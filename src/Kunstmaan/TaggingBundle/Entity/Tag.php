@@ -8,8 +8,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 use Kunstmaan\TaggingBundle\Form\TagAdminType;
+use DOctrine\ORM\Mapping\Cache;
 
 /**
+ *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\TaggingBundle\Repository\TagRepository")
  * @ORM\Table(name="kuma_tags")
  * @UniqueEntity("name")

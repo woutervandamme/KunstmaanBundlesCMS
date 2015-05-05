@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping\Cache;
 /**
  * Reference between a page and a pagepart
  *
- * @Cache
+ * @Cache(region="kunstmaan_slc_pagepart_region")
  * @ORM\Entity(repositoryClass="Kunstmaan\PagePartBundle\Repository\PagePartRefRepository")
  * @ORM\Table(name="kuma_page_part_refs", indexes={@ORM\Index(name="idx_page_part_search", columns={"pageId", "pageEntityname", "context"})})
  * @ORM\HasLifecycleCallbacks()

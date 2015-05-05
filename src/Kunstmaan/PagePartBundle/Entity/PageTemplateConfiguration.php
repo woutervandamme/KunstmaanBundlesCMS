@@ -6,10 +6,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\EntityManager;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Kunstmaan\NodeBundle\Entity\PageInterface;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
  * Configuration for page templates
  *
+ * @Cache(region="kunstmaan_slc_pagepart_region")
  * @ORM\Entity(repositoryClass="Kunstmaan\PagePartBundle\Repository\PageTemplateConfigurationRepository")
  * @ORM\Table(name="kuma_page_template_configuration", indexes={@ORM\Index(name="idx_page_template_config_search", columns={"page_id", "page_entity_name"})})
  */

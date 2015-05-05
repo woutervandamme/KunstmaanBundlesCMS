@@ -3,10 +3,11 @@
 namespace Kunstmaan\PagePartBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\PagePartBundle\Form\RawHTMLPagePartAdminType;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * Class that defines a raw html page part object to add to a page
- *
+ * @Cache(region="kunstmaan_slc_pagepart_region")
  * @ORM\Entity
  * @ORM\Table(name="kuma_raw_html_page_parts")
  */

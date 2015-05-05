@@ -5,10 +5,11 @@ namespace Kunstmaan\SitemapBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
 use Kunstmaan\SitemapBundle\Helper\HiddenFromSitemap;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
  * ContentPage
  *
+ * @Cache
  * @ORM\Entity()
  * @ORM\Table(name="kuma_sitemap_pages")
  */

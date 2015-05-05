@@ -3,10 +3,11 @@
 namespace Kunstmaan\PagePartBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\PagePartBundle\Form\ToTopPagePartAdminType;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * ToTopPagePart
- *
+ * @Cache(region="kunstmaan_slc_pagepart_region")
  * @ORM\Entity
  * @ORM\Table(name="kuma_to_top_page_parts")
  */

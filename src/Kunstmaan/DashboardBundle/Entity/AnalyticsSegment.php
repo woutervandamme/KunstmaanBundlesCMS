@@ -3,10 +3,12 @@
 namespace Kunstmaan\DashboardBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * AnalyticsSegment
  *
+ * @Cache
  * @ORM\Table(name="kuma_analytics_segment")
  * @ORM\Entity(repositoryClass="Kunstmaan\DashboardBundle\Repository\AnalyticsSegmentRepository")
  */

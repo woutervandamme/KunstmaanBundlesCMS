@@ -6,8 +6,9 @@ use DoctrineExtensions\Taggable\Entity\Tag as BaseTag;
 use DoctrineExtensions\Taggable\Entity\Tagging as BaseTagging;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
+ * @Cache
  * @ORM\Entity()
  * @ORM\Table(name="kuma_taggings",indexes={@ORM\Index(name="kuma_taggings_type_index", columns={"resource_type"})})
  */

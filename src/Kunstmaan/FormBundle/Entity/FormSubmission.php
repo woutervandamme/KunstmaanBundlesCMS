@@ -9,10 +9,11 @@ use Kunstmaan\NodeBundle\Entity\Node;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * The form submission
- *
+ * @Cache
  * @ORM\Entity
  * @ORM\Table(name="kuma_form_submissions")
  * @ORM\HasLifecycleCallbacks()

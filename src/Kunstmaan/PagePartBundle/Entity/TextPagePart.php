@@ -4,10 +4,12 @@ namespace Kunstmaan\PagePartBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\PagePartBundle\Form\TextPagePartAdminType;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * Class that defines a text page part object to add to a page
  *
+ * @Cache(region="kunstmaan_slc_pagepart_region")
  * @ORM\Entity
  * @ORM\Table(name="kuma_text_page_parts")
  */

@@ -8,11 +8,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * The FormSubmissionField will hold the submitted values from the form page parts. The FormSubmissionFields
  * will be attached to a FormSubmission.
  *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\FormBundle\Repository\FormSubmissionFieldRepository")
  * @ORM\Table(name="kuma_form_submission_fields")
  * @ORM\InheritanceType("SINGLE_TABLE")

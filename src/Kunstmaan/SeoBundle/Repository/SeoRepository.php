@@ -7,9 +7,10 @@ use Doctrine\ORM\EntityRepository;
 use Kunstmaan\SeoBundle\Entity\Seo;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Kunstmaan\UtilitiesBundle\Helper\ClassLookup;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
  * Repository for Seo
+ * @Cache
  */
 class SeoRepository extends EntityRepository
 {

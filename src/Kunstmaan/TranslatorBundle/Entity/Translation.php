@@ -4,8 +4,10 @@ namespace Kunstmaan\TranslatorBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
+ *
+ * @Cache
  * @ORM\Entity(repositoryClass="Kunstmaan\TranslatorBundle\Repository\TranslationRepository")
  * @ORM\Table(
  *     name="kuma_translation",

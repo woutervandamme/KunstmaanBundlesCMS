@@ -9,9 +9,11 @@ use Kunstmaan\NodeBundle\Form\ControllerActionAdminType;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * AbstractControllerAction
+ * @Cache
  */
 abstract class AbstractControllerAction extends AbstractEntity implements HasNodeInterface
 {

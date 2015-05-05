@@ -5,9 +5,10 @@ namespace Kunstmaan\SeoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 use Kunstmaan\SeoBundle\Form\RobotsType;
-
+use Doctrine\ORM\Mapping\Cache;
 /**
  * Robots.txt data
+ * @Cache
  * @ORM\Entity
  * @ORM\Table(name="kuma_robots")
  */

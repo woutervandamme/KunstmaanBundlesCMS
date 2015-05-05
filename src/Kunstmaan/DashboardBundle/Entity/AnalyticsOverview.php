@@ -4,10 +4,12 @@ namespace Kunstmaan\DashboardBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\AdminBundle\Entity\AbstractEntity;
+use Doctrine\ORM\Mapping\Cache;
 
 /**
  * AnalyticsOverview
  *
+ * @Cache
  * @ORM\Table(name="kuma_analytics_overview")
  * @ORM\Entity(repositoryClass="Kunstmaan\DashboardBundle\Repository\AnalyticsOverviewRepository")
  */
