@@ -125,6 +125,24 @@ class Seo extends AbstractEntity
      */
     protected $ogUrl;
 
+
+    protected $wouter;
+
+    /**
+     * @return mixed
+     */
+    public function getWouter()
+    {
+        return $this->wouter;
+    }
+
+    /**
+     * @param mixed $wouter
+     */
+    public function setWouter($wouter)
+    {
+        $this->wouter = $wouter;
+    }
     /**
      * @param string $url
      *

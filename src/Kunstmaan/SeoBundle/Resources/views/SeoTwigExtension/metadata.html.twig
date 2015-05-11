@@ -23,9 +23,14 @@
 {% if seo.getOgDescription() %}
     <meta property="og:description" content="{{ seo.getOgDescription() }}">
 {% endif %}
+{% if seo.getWouter() %}
+<meta property="og:wouter" content="{{ seo.getWouter() }}">
+{% endif %}
 {% if seo.getOgUrl() %}
    <meta property="og:url" content="{{ seo.getOgUrl() }}">
 {% else %}
+
+
     {% if currentNode %}
         <meta property="og:url" content="{{ url('_slug', { 'url': currentNode.slug, '_locale': app.request.locale }) }}"/>
     {% endif %}

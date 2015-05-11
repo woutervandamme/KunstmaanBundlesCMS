@@ -24,6 +24,8 @@ class SocialType extends AbstractType
             ->add('ogDescription', null, array('label' => 'OG description'))
             ->add('ogImage', 'media', array('mediatype' => 'image', 'label' => 'OG image', 'required' => false))
             ->add('ogUrl', null, array('label' => 'OG Url'))
+            ->add('Wouter', null, array('label' => 'Wouter'))
+
             ->add('linkedInRecommendLink', "text", array("required" => false, 'label' => 'LinkedIn Recommend Link'))
             ->add('linkedInRecommendProductID', "text", array("required" => false, 'label' => 'LinkedIn Product ID'));
     }
