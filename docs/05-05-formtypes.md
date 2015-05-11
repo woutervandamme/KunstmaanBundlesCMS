@@ -15,7 +15,7 @@ Formtypes
 
 ## 4) RangeType
 
-<img align="right"  width="200" alt="image for range type" src="https://raw.githubusercontent.com/woutervandamme/KunstmaanBundlesCMS/master/docs/images/RangeType.png" />
+<img align="right"  width="200" alt="image for range type" src="https://raw.githubusercontent.com/woutervandamme/KunstmaanBundlesCMS/documentation/formtype/docs/images/Range.png" />
 
 ## 5) MediaType
 
