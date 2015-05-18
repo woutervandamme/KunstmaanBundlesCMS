@@ -42,3 +42,6 @@ services:
         arguments: ["@security.context"]
         tags:
             -  { name: 'kunstmaan_admin.menu.adaptor' }
+
+    kunstmaan_seo.helper.facebook_scraper:
+        class: Kunstmaan\SeoBundle\Helper\Social\FacebookScraper
