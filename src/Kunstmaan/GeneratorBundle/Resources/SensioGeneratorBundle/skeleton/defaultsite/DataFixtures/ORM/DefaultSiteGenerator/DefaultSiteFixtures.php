@@ -144,7 +144,7 @@ class DefaultSiteFixtures extends AbstractFixture implements OrderedFixtureInter
 	    $pageparts['header'][] = $this->pagePartCreator->getCreatorArgumentsForPagePartAndProperties(
 		'{{ namespace }}\Entity\PageParts\PageBannerPagePart',
 		array(
-		    'setTitle' => $locale == 'nl' ? 'Wij zorgen voor jou fiets!' : 'We care for your bike!',
+		    'setTitle' => $locale == 'nl' ? 'Wij zorgen voor jouw fiets!' : 'We care for your bike!',
 		    'setDescription' => $locale == 'nl' ? 'De laatste modellen aan de beste prijs met een uitermate goede service na verkoop, daar tekenen wij voor!' : 'The latest models at the best prices with a top notch service guarantee, that\'s our promise!',
 		    'setBackgroundImage' => $headerMedia,
 		    'setButtonUrl' => $locale == 'nl' ? '/nl/diensten' : '/en/services',
@@ -862,7 +862,7 @@ class DefaultSiteFixtures extends AbstractFixture implements OrderedFixtureInter
 	$trans['footer.newsletter.description']['nl'] = 'Blijf op de hoogte van onze fantastische nieuwe producten, events en beoordelingen';
 
 	$trans['demositemessage']['en'] = 'This is the demonstration website of the <a href="http://bundles.kunstmaan.be">KunstmaanBundlesCMS</a>. <strong>All content on this site is purely fictional!</strong> This site has been created to give you an idea on what you can create using this open-source content management system. You can create your own instance of this site by <a href="https://github.com/roderik/KunstmaanBundlesCMS/blob/master/docs/03-installation.md#generating-your-website-skeleton">running the Default Site Generator with the --demosite option</a>.You can also try out <a href="/en/admin">the administration interface</a> by logging in using <i>admin</i> as username and <i>admin</i> as password.';
-	$trans['demositemessage']['nl'] = 'Dit is de demonstratie website van het <a href="http://bundles.kunstmaan.be">KunstmaanBundlesCMS</a>.<strong>Alle inhoud op deze website is pure fictie!</strong> Deze site is gemaakt om je een idee te geven wat je kan bouwen met dit open-source content management system. Je kan je eigen instantie van deze site opzetten door <a href="https://github.com/roderik/KunstmaanBundlesCMS/blob/master/docs/03-installation.md#generating-your-website-skeleton">het draaien van de Default Site Generator met de --demosite optie</a>.Je kan ook <a href="/en/admin">de administratie module</a> door in te loggen met <i>admin</i> als username en <i>admin</i> as wachtwoord.';
+	$trans['demositemessage']['nl'] = 'Dit is de demonstratie website van het <a href="http://bundles.kunstmaan.be">KunstmaanBundlesCMS</a>.<strong>Alle inhoud op deze website is pure fictie!</strong> Deze site is gemaakt om je een idee te geven wat je kan bouwen met dit open-source content management system. Je kan je eigen instantie van deze site opzetten door <a href="https://github.com/roderik/KunstmaanBundlesCMS/blob/master/docs/03-installation.md#generating-your-website-skeleton">het draaien van de Default Site Generator met de --demosite optie</a>.Je kan ook <a href="/en/admin">de administratie module</a> uitproberen door in te loggen met <i>admin</i> als username en <i>admin</i> als wachtwoord.';
 {% endif %}
 
 	$trans['warning.outdated.title']['en'] = 'You are using an outdated browser.';
