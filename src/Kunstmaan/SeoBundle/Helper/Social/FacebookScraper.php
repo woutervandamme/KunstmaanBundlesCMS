@@ -1,8 +1,6 @@
 <?php
 
-namespace \Kunstmaan\SeoBundle\Helper\Social;
-
-use \Kunstmaan\SeoBundle\Helper\Social\AbstractScraper;
+namespace Kunstmaan\SeoBundle\Helper\Social;
 
 class FacebookScraper extends AbstractScraper
 {
