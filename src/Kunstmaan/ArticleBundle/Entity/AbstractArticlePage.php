@@ -17,7 +17,6 @@ abstract class AbstractArticlePage extends AbstractPage implements HasPagePartsI
      *
      * @var \DateTime
      *
-     * @Cache
      * @ORM\Column(type="datetime")
      */
     protected $date;

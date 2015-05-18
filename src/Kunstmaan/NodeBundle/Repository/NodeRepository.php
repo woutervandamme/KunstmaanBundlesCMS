@@ -16,7 +16,7 @@ use Doctrine\ORM\Mapping\Cache;
 
 /**
  * NodeRepository
- * @Cache("NONSTRICT_READ_WRITE")
+ * @Cache
  */
 class NodeRepository extends NestedTreeRepository
 {
@@ -54,7 +54,7 @@ class NodeRepository extends NestedTreeRepository
             ->setParameter('lang', $lang)
             ->addOrderBy('t.weight', 'ASC')
             ->addOrderBy('t.title', 'ASC')
-            ->setCacheable(true);
+           ;
 
         if (!$includeHiddenFromNav) {
             $qb->andWhere('b.hiddenFromNav != true');

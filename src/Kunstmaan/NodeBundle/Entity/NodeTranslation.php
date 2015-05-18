@@ -73,6 +73,7 @@ class NodeTranslation extends AbstractEntity
      *
      * @ORM\ManyToOne(targetEntity="NodeVersion")
      * @ORM\JoinColumn(name="public_node_version_id", referencedColumnName="id")
+     * @Cache
      */
     protected $publicNodeVersion;
 
@@ -81,6 +82,7 @@ class NodeTranslation extends AbstractEntity
      *
      * @ORM\OneToMany(targetEntity="NodeVersion", mappedBy="nodeTranslation")
      * @ORM\OrderBy({"created" = "ASC"})
+     * @Cache
      */
     protected $nodeVersions;
 
