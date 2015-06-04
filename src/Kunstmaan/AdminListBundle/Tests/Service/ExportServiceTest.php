@@ -63,7 +63,8 @@ class ExportServiceTest extends \PHPUnit_Framework_TestCase
     {
         $adminList = $this->getMock('Kunstmaan\AdminListBundle\AdminList\ExportableInterface');
         $iterator = $this->getMock('\Iterator');
-        $adminList->expects($this->once())->method('getIterator')->willReturn($iterator);
+        $adminList->expects($this->once())->method('getIterator')->will($this->returnValue($iterator));
+
 
         $templateName = is_null($template) ? 'KunstmaanAdminListBundle:Default:export.csv.twig' : $template;
         $renderer = $this->getMock('Symfony\Bundle\FrameworkBundle\Templating\EngineInterface');

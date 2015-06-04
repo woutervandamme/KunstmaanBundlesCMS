@@ -55,7 +55,7 @@ class ExportListTest extends \PHPUnit_Framework_TestCase
         $this->configurator
             ->expects($this->once())
             ->method('getExportFields')
-            ->willReturn($fields);
+            ->will($this->returnValue($fields));
 
         $this->assertEquals($fields, $this->object->getExportColumns());
     }
@@ -69,7 +69,7 @@ class ExportListTest extends \PHPUnit_Framework_TestCase
         $this->configurator
             ->expects($this->once())
             ->method('getIterator')
-            ->willReturn($iterator);
+            ->will($this->returnValue($iterator));
 
         $this->assertInstanceOf('\Iterator', $iterator);
         $this->assertEquals($iterator, $this->object->getIterator());
@@ -86,7 +86,7 @@ class ExportListTest extends \PHPUnit_Framework_TestCase
             ->expects($this->once())
             ->method('getStringValue')
             ->with($item, 'id')
-            ->willReturn($item['id']);
+            ->will($this->returnValue($item['id']));
 
         $this->assertEquals(1, $this->object->getStringValue($item, 'id'));
     }
